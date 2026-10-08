@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>PERA DIGITAL · Yönetim Paneli</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#3E3936;--taupe:#B4A58E;--cream:#EDDCC4;--grey:#8E8B84;--sage:#ADB697;--paper:#FCF9F7;--line:rgba(62,57,54,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 14px/1.55 Montserrat,system-ui,sans-serif;color:var(--dark);background:var(--paper)}
+[hidden]{display:none!important}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:600}
+button,.btn{font:500 13px Montserrat,sans-serif;padding:10px 18px;border-radius:999px;border:1px solid var(--dark);background:var(--dark);color:var(--cream);cursor:pointer;text-decoration:none;display:inline-block}
+button:hover{opacity:.88}
+button.ghost{background:transparent;color:var(--dark)}
+button.danger{background:transparent;color:#b5483a;border-color:#b5483a}
+button.sm{padding:5px 11px;font-size:12px}
+button:disabled{opacity:.5;pointer-events:none}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;color:inherit}
+input:focus,textarea:focus{outline:0;border-color:var(--taupe);box-shadow:0 0 0 3px rgba(180,165,142,.25)}
+textarea{resize:vertical;min-height:70px}
+label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin:0 0 5px}
+
+.login{max-width:520px;margin:6vh auto;padding:36px;background:#fff;border:1px solid var(--line);border-radius:20px}
+.login h1{font-size:2rem;margin-bottom:6px}
+.login p{color:#5a544f;margin-bottom:18px}
+.login .f{margin-bottom:14px}
+.login .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.note{font-size:12px;color:var(--grey);margin-top:14px}
+.err{color:#b5483a}.ok{color:#3d5a2c}
+
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+aside{background:var(--dark);color:var(--cream);padding:22px 16px;position:sticky;top:0;height:100vh;overflow:auto}
+aside h1{font-size:1.5rem;letter-spacing:.18em;margin-bottom:2px}
+aside small{color:var(--taupe);display:block;margin-bottom:22px}
+aside a{display:block;padding:9px 12px;border-radius:10px;color:var(--cream);text-decoration:none;cursor:pointer;margin-bottom:2px}
+aside a:hover{background:rgba(255,255,255,.08)}
+aside a.on{background:var(--cream);color:var(--dark);font-weight:600}
+main{padding:0 0 100px}
+.bar{position:sticky;top:0;z-index:5;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:14px 28px;background:rgba(252,249,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .sp{margin-right:auto}
+#status{font-size:12px}
+.pane{padding:28px;max-width:860px}
+.pane h2{font-size:2rem;margin-bottom:20px}
+.fld{margin-bottom:16px}
+.grp{border:1px solid var(--line);border-radius:14px;padding:18px;margin:6px 0 18px;background:#fff}
+.grp>h3{font:600 12px Montserrat;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.item{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px;background:var(--paper)}
+.item-h{display:flex;gap:6px;align-items:center;margin-bottom:12px}
+.item-h b{margin-right:auto;font-size:12px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase}
+.srow{display:flex;gap:8px;margin-bottom:8px}
+.hint{font-size:12px;color:var(--grey);margin:-8px 0 14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.app{grid-template-columns:1fr}aside{position:static;height:auto;display:flex;flex-wrap:wrap;gap:4px}aside h1,aside small{width:100%}.two{grid-template-columns:1fr}.bar,.pane{padding-inline:16px}}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <h1>PERA DIGITAL</h1>
+  <p>Yönetim paneli. Siteyi düzenleyip tek tıkla GitHub'a kaydedersiniz; site birkaç dakika içinde güncellenir.</p>
+  <div class="two">
+    <div class="f"><label>GitHub kullanıcı adı</label><input id="gOwner" placeholder="kullaniciadi"></div>
+    <div class="f"><label>Depo (repo) adı</label><input id="gRepo" placeholder="pera-digital-site"></div>
+  </div>
+  <div class="two">
+    <div class="f"><label>Branch</label><input id="gBranch" value="main"></div>
+    <div class="f"><label>Dosya yolu</label><input id="gPath" value="content.json"></div>
+  </div>
+  <div class="f"><label>GitHub erişim anahtarı (token)</label><input id="gToken" type="password" placeholder="github_pat_..." autocomplete="off"></div>
+  <div class="row">
+    <button id="btnConnect">GitHub'a bağlan</button>
+    <button class="ghost" id="btnLocal">Sadece yerel dosyayı düzenle</button>
+  </div>
+  <p class="note">Token yalnızca bu tarayıcıda saklanır, kimseye gönderilmez; sadece GitHub'a doğrudan gider. Token'ı yalnızca bu depoya, yalnızca “Contents: Read and write” izniyle oluşturun (README'de adım adım var). Ortak bilgisayarda “Çıkış” yapın.</p>
+  <p class="note err" id="loginErr"></p>
+</section>
+
+<div class="app" id="app" hidden>
+  <aside>
+    <h1>PERA</h1><small>Yönetim paneli</small>
+    <nav id="tabs"></nav>
+  </aside>
+  <main>
+    <div class="bar">
+      <span class="sp" id="status"></span>
+      <button class="ghost" id="btnPreview">Önizle</button>
+      <button class="ghost" id="btnDownload">JSON indir</button>
+      <button class="ghost" id="btnUpload">JSON yükle</button>
+      <button class="ghost" id="btnLogout">Çıkış</button>
+      <button id="btnSave">GitHub'a kaydet</button>
+      <input type="file" id="fileIn" accept=".json,application/json" hidden>
+    </div>
+    <div class="pane" id="pane"></div>
+  </main>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
