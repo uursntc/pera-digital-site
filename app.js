@@ -122,6 +122,15 @@
       return '<details class="reveal"><summary>' + esc(i.q) + '</summary><p>' + esc(i.a) + '</p></details>';
     }).join('');
 
+    var ct = c.contact || {};
+    var cits = arr(ct.items).filter(function (i) { return i.value; });
+    $('iletisim').hidden = !cits.length;
+    $('contact').innerHTML = head(ct) + '<div class="contact">' + cits.map(function (i) {
+      var ext = /^https?:/i.test(i.href || '') ? ' target="_blank" rel="noopener"' : '';
+      return '<article class="card reveal"><span class="num">' + esc(i.label) + '</span><p class="cval">' + esc(i.value) + '</p>' +
+        (i.href ? '<a class="btn btn-sm" href="' + esc(safeUrl(i.href)) + '"' + ext + '>' + esc(i.cta || 'Git') + '</a>' : '') + '</article>';
+    }).join('') + '</div>';
+
     var ft = c.footer || {};
     $('footName').textContent = s.name || ''; $('footTag').textContent = ft.tagline || ''; $('footCopy').textContent = ft.copyright || '';
     var links = [];

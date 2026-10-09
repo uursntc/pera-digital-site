@@ -182,3 +182,8 @@ details p{margin-top:12px;color:#5a544f;max-width:640px}
 
 .values-title{font-size:2rem;color:var(--cream);margin:44px 0 4px}
 .sec-dark .head h2{max-width:18ch}
+
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.contact .card{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.contact .num{margin:0}
+.cval{font:500 1.7rem/1.2 var(--serif);word-break:break-word;user-select:all}

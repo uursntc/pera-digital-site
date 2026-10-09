@@ -3,7 +3,7 @@
     "name": "PERA DIGITAL",
     "title": "PERA DIGITAL | Dijital Pazarlama Ajansı",
     "description": "Önce anlarız, sonra üretiriz. Meta reklam, sosyal medya, pazarlama ve marka stratejisi.",
-    "email": "",
+    "email": "peradigital9@gmail.com",
     "instagram": "pera.digitalmarketing",
     "instagramUrl": "https://instagram.com/pera.digitalmarketing",
     "logo": "assets/logo.png",
@@ -29,6 +29,10 @@
     {
       "label": "Başvuru",
       "href": "#basvuru"
+    },
+    {
+      "label": "İletişim",
+      "href": "#iletisim"
     }
   ],
   "navCta": {
@@ -76,22 +80,22 @@
       {
         "num": "01",
         "title": "Perspektif",
-        "text": "Bir markayı büyütmek için önce onu doğru anlamak gerekir. Veriye, markanın karakterine ve kitlesine bakar, neyi nasıl anlatacağımıza ondan sonra karar veririz."
+        "text": "Bir markayı büyütmek, önce onu doğru anlamaktan geçer. Veri, içgörü ve marka karakterini analiz ederek doğru iletişim perspektifini oluştururuz."
       },
       {
         "num": "02",
         "title": "Etki",
-        "text": "Bir fikir fark edilmezse işe yaramaz. Stratejiyle yaratıcılığı bir araya getirir, akılda kalan işler çıkarırız."
+        "text": "Bir fikir, hayata geçtiğinde etki yaratır. Strateji ve yaratıcılığı buluşturur, markaların akılda kalmasını ve iz bırakmasını sağlarız."
       },
       {
         "num": "03",
         "title": "Rezonans",
-        "text": "Mesajın kitleye ulaşması yetmez, karşılık bulması gerekir. Doğru kişiye, doğru dille konuşuruz."
+        "text": "Etki, karşılık bulduğunda anlam kazanır. Bir mesajın hedef kitleye ulaşması yeterli değildir; onlarda bir yankı uyandırması gerekir."
       },
       {
         "num": "04",
         "title": "Aksiyon",
-        "text": "Görünür olmak yetmez. Önemli olan, bu görünürlüğün sonuca dönüşmesi."
+        "text": "Kurulan bağ, harekete dönüştüğünde anlam kazanır. Çünkü bizim için önemli olan yalnızca görünür olmak değil; sonuç yaratmaktır."
       }
     ]
   },
@@ -275,6 +279,26 @@
       {
         "q": "Sonuçları nasıl değerlendiriyorsunuz?",
         "a": "Başarı ölçütlerini hedefe göre belirleriz. Performansı düzenli takip eder, verilere göre geliştiririz."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "08 / İletişim",
+    "title": "Bize yazın.",
+    "accent": "",
+    "text": "Formu doldurmak istemezseniz doğrudan e-posta gönderebilir ya da Instagram'dan mesaj atabilirsiniz.",
+    "items": [
+      {
+        "label": "E-posta",
+        "value": "peradigital9@gmail.com",
+        "href": "mailto:peradigital9@gmail.com",
+        "cta": "E-posta gönder"
+      },
+      {
+        "label": "Instagram DM",
+        "value": "@pera.digitalmarketing",
+        "href": "https://ig.me/m/pera.digitalmarketing",
+        "cta": "Mesaj at"
       }
     ]
   },

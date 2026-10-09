@@ -4,7 +4,7 @@
   var LS = 'pera_admin_gh', state = null, sha = null, mode = 'github', dirty = false, current = null;
 
   var LABELS = {
-    site: 'Site ayarları', nav: 'Menü', navCta: 'Menü butonu', hero: 'Ana ekran', marquee: 'Markalar şeridi',
+    site: 'Site ayarları', contact: 'İletişim', cta: 'Buton yazısı', nav: 'Menü', navCta: 'Menü butonu', hero: 'Ana ekran', marquee: 'Markalar şeridi',
     approach: 'Yaklaşım', about: 'Hakkımızda · Misyon · Vizyon', services: 'Hizmetler', audience: 'Hedef kitle',
     results: 'Sonuçlar', process: 'Süreç', apply: 'Başvuru formu', faq: 'SSS', footer: 'Alt bilgi',
     name: 'Marka adı', title: 'Başlık', accent: 'Vurgulu başlık (italik)', titleAccent: 'Vurgulu başlık (italik)', description: 'Açıklama (SEO)',
