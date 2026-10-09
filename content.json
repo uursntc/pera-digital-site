@@ -169,6 +169,17 @@
           "Hedef kitle",
           "Büyüme"
         ]
+      },
+      {
+        "num": "04",
+        "title": "Web Sitesi Tasarımı ve Düzenleme",
+        "text": "Markanıza uygun web sitesini sıfırdan kurar ya da mevcut sitenizi düzenleriz. Tasarım, içerik ve yapı markanın anlattığıyla aynı yönde olur.",
+        "tags": [
+          "Tasarım",
+          "Kurulum",
+          "Düzenleme",
+          "Mobil uyum"
+        ]
       }
     ],
     "text": "Tek hizmetle başlayabilir, ihtiyaca göre birleştirebilirsiniz."
@@ -180,7 +191,8 @@
       "Güzellik & Kozmetik",
       "Restoran & Kafe",
       "Wellness & Hospitality",
-      "Premium Tüketici Markaları"
+      "Premium Tüketici Markaları",
+      "Teknoloji"
     ]
   },
   "results": {
@@ -241,6 +253,7 @@
       "Restoran / Kafe",
       "Wellness / Hospitality",
       "Lifestyle",
+      "Teknoloji",
       "Diğer"
     ],
     "budgets": [
@@ -253,6 +266,7 @@
       "Meta reklam yönetimi",
       "Sosyal medya yönetimi",
       "Pazarlama ve marka stratejisi",
+      "Web sitesi tasarımı ve düzenleme",
       "Emin değilim"
     ]
   },
@@ -262,11 +276,11 @@
     "items": [
       {
         "q": "Hangi hizmetleri sunuyorsunuz?",
-        "a": "Meta reklam yönetimi, sosyal medya yönetimi, pazarlama ve marka stratejisi. Kapsamı ihtiyacınıza göre birlikte belirleriz."
+        "a": "Meta reklam yönetimi, sosyal medya yönetimi, pazarlama ve marka stratejisi, web sitesi tasarımı ve düzenleme. Kapsamı ihtiyacınıza göre birlikte belirleriz."
       },
       {
         "q": "Yalnızca reklam yönetimi mi yapıyorsunuz?",
-        "a": "Hayır. Sosyal medya, pazarlama stratejisi ve marka danışmanlığı da yapıyoruz. Tek hizmetle başlayıp zamanla birleştirebilirsiniz."
+        "a": "Hayır. Sosyal medya, pazarlama stratejisi, marka danışmanlığı ve web sitesi tarafında da çalışıyoruz. Tek hizmetle başlayıp zamanla birleştirebilirsiniz."
       },
       {
         "q": "Her sektörden markayla çalışıyor musunuz?",
