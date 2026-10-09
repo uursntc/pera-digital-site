@@ -12,7 +12,7 @@
     logo: 'Logo dosya yolu', announce: 'Üst duyuru çubuğu (boşsa gizlenir)', label: 'Etiket', href: 'Bağlantı',
     badge: 'Rozet', text: 'Metin', primaryCta: 'Ana buton', secondaryCta: 'İkinci buton', stats: 'Rakamlar (değer boşsa gizlenir)',
     value: 'Değer', items: 'Öğeler', eyebrow: 'Üst etiket', num: 'Numara', tags: 'Etiketler', tag: 'Etiket', metric: 'Rakam',
-    metricLabel: 'Rakam açıklaması', steps: 'Adımlar', time: 'Süre', mission: 'Misyon', vision: 'Vizyon', values: 'Değerler',
+    metricLabel: 'Rakam açıklaması', steps: 'Adımlar', time: 'Süre', mission: 'Misyon', vision: 'Vizyon', values: 'Çalışma ilkeleri', valuesTitle: 'Çalışma ilkeleri başlığı',
     checks: 'Maddeler', formTitle: 'Form başlığı', submitLabel: 'Gönder butonu', successTitle: 'Başarı başlığı', successText: 'Başarı metni',
     kvkkText: 'KVKK onay metni', kvkkUrl: 'KVKK sayfası linki', endpoint: 'Form adresi (Formspree / Web3Forms)', accessKey: 'Web3Forms access key',
     mailtoFallback: 'Yedek e-posta (form adresi yoksa)', sectors: 'Sektör seçenekleri', budgets: 'Bütçe seçenekleri',

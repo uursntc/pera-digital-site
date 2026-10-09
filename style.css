@@ -179,3 +179,6 @@ details p{margin-top:12px;color:#5a544f;max-width:640px}
   .nav .btn-sm{display:none}
 }
 @media (max-width:560px){.grid2{grid-template-columns:1fr}.form{padding:26px 20px}}
+
+.values-title{font-size:2rem;color:var(--cream);margin:44px 0 4px}
+.sec-dark .head h2{max-width:18ch}

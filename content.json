@@ -2,7 +2,7 @@
   "site": {
     "name": "PERA DIGITAL",
     "title": "PERA DIGITAL | Dijital Pazarlama Ajansı",
-    "description": "Markalara önce bakarız, sonra üretiriz. Meta Ads, sosyal medya, marka ve içerik stratejisi.",
+    "description": "Önce anlarız, sonra üretiriz. Meta reklam, sosyal medya, pazarlama ve marka stratejisi.",
     "email": "",
     "instagram": "pera.digitalmarketing",
     "instagramUrl": "https://instagram.com/pera.digitalmarketing",
@@ -10,24 +10,57 @@
     "announce": "Yeni markalar için başvurular açık"
   },
   "nav": [
-    { "label": "Yaklaşım", "href": "#yaklasim" },
-    { "label": "Hakkımızda", "href": "#hakkimizda" },
-    { "label": "Hizmetler", "href": "#hizmetler" },
-    { "label": "Sonuçlar", "href": "#sonuclar" },
-    { "label": "Başvuru", "href": "#basvuru" }
+    {
+      "label": "Yaklaşım",
+      "href": "#yaklasim"
+    },
+    {
+      "label": "Hakkımızda",
+      "href": "#hakkimizda"
+    },
+    {
+      "label": "Hizmetler",
+      "href": "#hizmetler"
+    },
+    {
+      "label": "Sonuçlar",
+      "href": "#sonuclar"
+    },
+    {
+      "label": "Başvuru",
+      "href": "#basvuru"
+    }
   ],
-  "navCta": { "label": "Başvur", "href": "#basvuru" },
+  "navCta": {
+    "label": "Başvur",
+    "href": "#basvuru"
+  },
   "hero": {
     "badge": "Perspektif · Etki · Rezonans · Aksiyon",
-    "title": "Markanız iyi görünüyor.",
-    "titleAccent": "Peki ne söylüyor?",
-    "text": "Markaya önce bakarız, sonra üretiriz. Reklam, içerik ve tasarım; hepsi markanızın kim olduğunu söylemesiyle başlar.",
-    "primaryCta": { "label": "Başvuru formunu doldur", "href": "#basvuru" },
-    "secondaryCta": { "label": "Yaklaşımımız", "href": "#yaklasim" },
+    "title": "Önce anlarız.",
+    "titleAccent": "Sonra üretiriz.",
+    "text": "Her markanın hikâyesi de hedefi de farklı. Reklam ve içerik kararlarını, markanızı ve kitlenizi tanıdıktan sonra veririz.",
+    "primaryCta": {
+      "label": "Başvuru formunu doldur",
+      "href": "#basvuru"
+    },
+    "secondaryCta": {
+      "label": "Yaklaşımımız",
+      "href": "#yaklasim"
+    },
     "stats": [
-      { "value": "", "label": "Yönetilen marka" },
-      { "value": "", "label": "Aylık reklam bütçesi" },
-      { "value": "15 dk.", "label": "İlk değerlendirme" }
+      {
+        "value": "",
+        "label": "Yönetilen marka"
+      },
+      {
+        "value": "",
+        "label": "Aylık reklam bütçesi"
+      },
+      {
+        "value": "",
+        "label": "Deneyim"
+      }
     ]
   },
   "marquee": {
@@ -36,96 +69,213 @@
   },
   "approach": {
     "eyebrow": "01 / Yaklaşım",
-    "title": "Hesabı değil,",
-    "accent": "markanın tamamını okuruz.",
-    "text": "Instagram hesabı, iletişim dili, hedef kitle, içerik ve reklam. Hepsine ayrı ayrı değil, bir bütün olarak bakarız.",
+    "title": "Yaklaşımımız",
+    "accent": "",
+    "text": "",
     "items": [
-      { "num": "01", "title": "Perspektif", "text": "Markaya herkesin baktığı yerden bakmayız. Önce gerçek soruyu buluruz." },
-      { "num": "02", "title": "Etki", "text": "Dikkat çekmeyen içerik, var olmayan içeriktir. İlk üç saniyeyi ciddiye alırız." },
-      { "num": "03", "title": "Rezonans", "text": "Doğru kitle kendini içerikte tanımalı. Herkese değil, doğru kişiye konuşuruz." },
-      { "num": "04", "title": "Aksiyon", "text": "Beğeni değil; profil ziyareti, mesaj, müşteri." }
+      {
+        "num": "01",
+        "title": "Perspektif",
+        "text": "Bir markayı büyütmek için önce onu doğru anlamak gerekir. Veriye, markanın karakterine ve kitlesine bakar, neyi nasıl anlatacağımıza ondan sonra karar veririz."
+      },
+      {
+        "num": "02",
+        "title": "Etki",
+        "text": "Bir fikir fark edilmezse işe yaramaz. Stratejiyle yaratıcılığı bir araya getirir, akılda kalan işler çıkarırız."
+      },
+      {
+        "num": "03",
+        "title": "Rezonans",
+        "text": "Mesajın kitleye ulaşması yetmez, karşılık bulması gerekir. Doğru kişiye, doğru dille konuşuruz."
+      },
+      {
+        "num": "04",
+        "title": "Aksiyon",
+        "text": "Görünür olmak yetmez. Önemli olan, bu görünürlüğün sonuca dönüşmesi."
+      }
     ]
   },
   "about": {
     "eyebrow": "02 / Hakkımızda",
-    "title": "Ne yaptığımızı biliyoruz.",
-    "accent": "Bağırmamıza gerek yok.",
-    "text": "PERA DIGITAL; markaları dijitalde doğru konumlandırmak için kurulmuş, strateji odaklı bir dijital pazarlama ajansıdır.",
+    "title": "Doğru konum, doğru stratejiyle başlar.",
+    "accent": "",
+    "text": "PERA DIGITAL, markaların dijitalde doğru yerde durması için kurulmuş, strateji odaklı bir dijital pazarlama ajansı.",
     "mission": {
       "label": "Misyon",
-      "text": "Markaların dijitalde kim olduklarını net biçimde anlatmasını sağlamak; içerik ve reklamı tek bir stratejinin parçası olarak yönetmek."
+      "text": "Markaların dijitalde kendini net anlatmasına yardım etmek. Reklamı ve içeriği tek bir stratejinin parçası olarak yönetmek."
     },
     "vision": {
       "label": "Vizyon",
-      "text": "Markalara farklı bakan, görüşleri olan ve takip edilmek istenen bir yaratıcı ajans olmak."
+      "text": "Yaratıcılığı stratejiyle birleştiren, markalara yeni bir bakış sunan bir ajans olmak."
     },
     "values": [
-      { "title": "Seçici", "text": "Her markayla çalışmayız. Doğru eşleşme, doğru sonuç getirir." },
-      { "title": "Net", "text": "Az kelimeyle güçlü fikir. Süslü rapor değil, uygulanabilir karar." },
-      { "title": "Ölçülebilir", "text": "Güzel görünmesi yetmez. Ne işe yaradığını sayılarla göstermeliyiz." }
-    ]
+      {
+        "title": "Stratejik",
+        "text": "Her işe bir hedefle başlarız. Fikirleri markanın ihtiyacına ve kitlesine göre geliştiririz."
+      },
+      {
+        "title": "Açık",
+        "text": "Ne yaptığımızı, neden yaptığımızı ve sıradaki adımı net söyleriz."
+      },
+      {
+        "title": "Yaratıcı",
+        "text": "Hazır kalıplar yerine markaya özel fikirler üretiriz. Görsel, mesaj ve format aynı fikrin parçasıdır."
+      },
+      {
+        "title": "Veriye duyarlı",
+        "text": "Sonuçları takip eder, işe yarayanı geliştiririz. Rakamlar amaç değil, daha iyi karar vermenin aracıdır."
+      }
+    ],
+    "valuesTitle": "Çalışma ilkelerimiz"
   },
   "services": {
     "eyebrow": "03 / Hizmetler",
-    "title": "Dört başlık,",
-    "accent": "tek bir bakış.",
+    "title": "Hizmetlerimiz",
+    "accent": "",
     "items": [
-      { "num": "01", "title": "Meta Ads", "text": "Önce ne söyleyeceğinizi kurarız, sonra kime söyleyeceğimizi.", "tags": ["Hedef kitle", "Kreatif", "Test", "Ölçümleme"] },
-      { "num": "02", "title": "Sosyal Medya", "text": "Takvimi doldurmak kolay. Zor olan, her içeriğin aynı markayı anlatması.", "tags": ["İçerik", "Akış", "Topluluk", "Tutarlılık"] },
-      { "num": "03", "title": "Marka Stratejisi", "text": "Markanızın dijitalde nerede durduğunu ve neden tercih edildiğini netleştiririz.", "tags": ["Konumlandırma", "İletişim dili", "Perspektif", "Büyüme"] },
-      { "num": "04", "title": "Tasarım & Web", "text": "Görsel kimlik bir zevk meselesi değil, bir karar sistemi.", "tags": ["Görsel kimlik", "Tasarım", "Web", "Kampanya"] }
-    ]
+      {
+        "num": "01",
+        "title": "Meta Reklamları",
+        "text": "Kampanyayı kurmadan önce teklifi, kitleyi ve hedefi netleştiririz. Sonra test eder, işe yarayanı büyütürüz.",
+        "tags": [
+          "Hedef kitle",
+          "Kreatif",
+          "Test",
+          "Ölçümleme"
+        ]
+      },
+      {
+        "num": "02",
+        "title": "Sosyal Medya Yönetimi",
+        "text": "İçerik takvimini doldurmak kolay. Zor olan, her paylaşımın aynı markayı anlatması. Bunu birlikte kurarız.",
+        "tags": [
+          "İçerik",
+          "Akış",
+          "Topluluk",
+          "Tutarlılık"
+        ]
+      },
+      {
+        "num": "03",
+        "title": "Pazarlama ve Marka Stratejisi",
+        "text": "Markanızın dijitalde nerede durduğuna ve kime ne söylediğine bakarız. Ardından net bir yol haritası çıkarırız.",
+        "tags": [
+          "Konumlandırma",
+          "İletişim dili",
+          "Hedef kitle",
+          "Büyüme"
+        ]
+      }
+    ],
+    "text": "Tek hizmetle başlayabilir, ihtiyaca göre birleştirebilirsiniz."
   },
   "audience": {
-    "title": "Kimler için çalışıyoruz",
-    "items": ["Moda & Lifestyle", "Güzellik & Kozmetik", "Restoran & Kafe", "Wellness & Hospitality", "Premium Tüketici Markaları"]
+    "title": "Kimlerle çalışıyoruz",
+    "items": [
+      "Moda & Lifestyle",
+      "Güzellik & Kozmetik",
+      "Restoran & Kafe",
+      "Wellness & Hospitality",
+      "Premium Tüketici Markaları"
+    ]
   },
   "results": {
     "eyebrow": "04 / Sonuçlar",
-    "title": "Sunum değil,",
-    "accent": "ölçülebilir etki.",
-    "text": "",
-    "items": [
-      { "tag": "Vaka çalışması", "title": "Başlık buraya gelecek", "text": "Kısa açıklama buraya gelecek.", "metric": "", "metricLabel": "" }
-    ]
+    "title": "Sonuçlar",
+    "accent": "",
+    "text": "Birlikte çalıştığımız markaların sonuçları burada yer alacak.",
+    "items": []
   },
   "process": {
     "eyebrow": "05 / Süreç",
-    "title": "Satış sunumu değil.",
-    "accent": "Net bir değerlendirme.",
-    "text": "Başvurunuzdan sonra ilk görüşmede neler olduğunu şöyle planlıyoruz.",
+    "title": "Nasıl başlıyoruz?",
+    "accent": "",
+    "text": "Başvurunuzdan sonra süreç şöyle ilerler.",
     "steps": [
-      { "num": "01", "title": "Sizi dinleriz", "text": "Markanızı, hedefinizi ve mevcut durumu konuşuruz.", "time": "5 dk." },
-      { "num": "02", "title": "Hesabınıza bakarız", "text": "Profil, içerik ve reklam tarafındaki asıl fırsatı buluruz.", "time": "7 dk." },
-      { "num": "03", "title": "İlk adımı söyleriz", "text": "Önceliği ve doğru başlangıç noktasını netleştiririz.", "time": "3 dk." }
+      {
+        "num": "01",
+        "title": "Önce konuşuruz",
+        "text": "Kısa bir ön görüşmede markanızı, hedeflerinizi ve şu anki durumu dinleriz.",
+        "time": ""
+      },
+      {
+        "num": "02",
+        "title": "İhtiyacı netleştiririz",
+        "text": "Neye ihtiyacınız olduğunu ve nereden başlamanın mantıklı olduğunu birlikte belirleriz.",
+        "time": ""
+      },
+      {
+        "num": "03",
+        "title": "Kapsamı belirleriz",
+        "text": "Hizmetleri, hedefleri ve sonraki adımları netleştirip başlarız.",
+        "time": ""
+      }
     ]
   },
   "apply": {
     "eyebrow": "06 / Başvuru",
     "title": "Önce markanızı",
     "accent": "tanıyalım.",
-    "text": "Kısa formu doldurun. Çalışma modelimiz size uygunsa 2 iş günü içinde sizinle iletişime geçelim.",
-    "checks": ["2 dakikalık ön başvuru", "Ücretsiz ilk değerlendirme", "Satış baskısı yok"],
-    "formTitle": "Markanızı kısaca tanıyalım",
-    "submitLabel": "Başvuruyu gönder",
-    "successTitle": "Başvurunuz bize ulaştı.",
-    "successText": "2 iş günü içinde sizinle iletişime geçeceğiz.",
+    "text": "Kısa formu doldurun, uygunsak size dönüş yapalım.",
+    "checks": [
+      "Birkaç dakikalık kısa form",
+      "Ardından kısa bir ön görüşme",
+      "Bağlayıcı bir taraf yok"
+    ],
+    "formTitle": "Başvuru formu",
+    "submitLabel": "Gönder",
+    "successTitle": "Başvurunuzu aldık.",
+    "successText": "En kısa sürede size dönüş yapacağız.",
     "kvkkText": "Kişisel verilerimin başvuru değerlendirmesi amacıyla işlenmesini kabul ediyorum.",
     "kvkkUrl": "",
     "endpoint": "",
     "accessKey": "",
     "mailtoFallback": "",
-    "sectors": ["Moda", "Güzellik / Kozmetik", "Restoran / Kafe", "Wellness / Hospitality", "Lifestyle", "Diğer"],
-    "budgets": ["Henüz reklam vermiyoruz", "15.000 TL altı", "15.000 – 40.000 TL", "40.000 TL üzeri"],
-    "services": ["Meta Ads", "Sosyal medya yönetimi", "Marka stratejisi", "Tasarım & Web", "Emin değilim"]
+    "sectors": [
+      "Moda",
+      "Güzellik / Kozmetik",
+      "Restoran / Kafe",
+      "Wellness / Hospitality",
+      "Lifestyle",
+      "Diğer"
+    ],
+    "budgets": [
+      "Henüz reklam vermiyoruz",
+      "15.000 TL altı",
+      "15.000 – 40.000 TL",
+      "40.000 TL üzeri"
+    ],
+    "services": [
+      "Meta reklam yönetimi",
+      "Sosyal medya yönetimi",
+      "Pazarlama ve marka stratejisi",
+      "Emin değilim"
+    ]
   },
   "faq": {
     "eyebrow": "07 / SSS",
-    "title": "Kısa cevaplar.",
+    "title": "Sıkça sorulan sorular",
     "items": [
-      { "q": "İlk görüşme ücretsiz mi?", "a": "Evet. İlk değerlendirme ücretsizdir ve çalışma zorunluluğu oluşturmaz." },
-      { "q": "Kimler için uygun?", "a": "Dijitalde daha sistemli büyümek isteyen, markasını ciddiye alan işletmeler için." },
-      { "q": "Yalnızca reklam mı yönetiyorsunuz?", "a": "Hayır. Reklamı marka, içerik ve ölçümlemenin bir parçası olarak ele alıyoruz." }
+      {
+        "q": "Hangi hizmetleri sunuyorsunuz?",
+        "a": "Meta reklam yönetimi, sosyal medya yönetimi, pazarlama ve marka stratejisi. Kapsamı ihtiyacınıza göre birlikte belirleriz."
+      },
+      {
+        "q": "Yalnızca reklam yönetimi mi yapıyorsunuz?",
+        "a": "Hayır. Sosyal medya, pazarlama stratejisi ve marka danışmanlığı da yapıyoruz. Tek hizmetle başlayıp zamanla birleştirebilirsiniz."
+      },
+      {
+        "q": "Her sektörden markayla çalışıyor musunuz?",
+        "a": "Her markanın ihtiyacı farklı. Hedeflerinize bakıp birlikte çalışmanın doğru olup olmadığını konuşuruz."
+      },
+      {
+        "q": "Çalışmaya nasıl başlıyoruz?",
+        "a": "Önce kısa bir ön görüşme yaparız. Sonra ihtiyacı netleştirir, kapsamı ve sonraki adımları birlikte belirleriz."
+      },
+      {
+        "q": "Sonuçları nasıl değerlendiriyorsunuz?",
+        "a": "Başarı ölçütlerini hedefe göre belirleriz. Performansı düzenli takip eder, verilere göre geliştiririz."
+      }
     ]
   },
   "footer": {

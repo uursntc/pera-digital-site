@@ -74,6 +74,7 @@
       '<div class="mv reveal">' +
       '<div class="box"><h3>' + esc((ab.mission || {}).label) + '</h3><p>' + esc((ab.mission || {}).text) + '</p></div>' +
       '<div class="box"><h3>' + esc((ab.vision || {}).label) + '</h3><p>' + esc((ab.vision || {}).text) + '</p></div></div>' +
+      (ab.valuesTitle ? '<h3 class="values-title reveal">' + esc(ab.valuesTitle) + '</h3>' : '') +
       '<div class="values reveal">' + arr(ab.values).map(function (v) {
         return '<div class="v"><h4>' + esc(v.title) + '</h4><p>' + esc(v.text) + '</p></div>';
       }).join('') + '</div>';
