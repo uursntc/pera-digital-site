@@ -170,8 +170,9 @@ details p{margin-top:12px;color:#5a544f;max-width:640px}
 @media (max-width:900px){
   .hero-grid,.apply-grid,.mv{grid-template-columns:1fr}
   .hero-card{max-width:380px}
-  .svc-item{grid-template-columns:44px 1fr}
-  .svc-item .tags{grid-column:2}
+  .svc-item{grid-template-columns:1fr;gap:10px;padding:28px 0}
+  .svc-item .num{padding-top:0}
+  .svc-item h3{font-size:1.8rem}
   .burger{display:block}
   .nav-links{position:fixed;inset:64px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:8px 20px 20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.3s;z-index:-1}
   .nav-links.open{transform:none}
