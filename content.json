@@ -244,7 +244,7 @@
     "successText": "En kısa sürede size dönüş yapacağız.",
     "kvkkText": "Kişisel verilerimin başvuru değerlendirmesi amacıyla işlenmesini kabul ediyorum.",
     "kvkkUrl": "",
-    "endpoint": "",
+    "endpoint": "https://formspree.io/f/maeqdplp",
     "accessKey": "",
     "mailtoFallback": "",
     "sectors": [
