@@ -218,7 +218,7 @@
     "title": "Rapor böyle görünür.",
     "accent": "",
     "text": "Çalışırken neye baktığımızı göstermek için hazırladığımız örnek bir panel.",
-    "note": "Örnek veri · Gerçek bir müşteri sonucu değildir",
+    "note": "",
     "kpis": [
       {
         "label": "Erişim",
