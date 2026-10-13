@@ -27,7 +27,7 @@
     'hero.stats': 'Değeri boş bırakılan rakamlar sitede görünmez.',
     'booking.calUrl': 'cal.com\'da hesap açıp bir etkinlik oluşturun, linkini (ör. https://cal.com/kullaniciadi/gorusme) buraya yapıştırın. Boş bırakırsanız Randevu bölümü ve menüdeki linki gizlenir.',
     'demo.note': 'Rakamlar gerçek değilse bu dipnot kalsın. Gerçek müşteri verilerini kullanmaya başlayınca silebilirsiniz.',
-    'demo.line.data': 'Sayıları virgülle yazın (ör. 12,15,22,31). Etiket sayısıyla aynı olsun.',
+    'demo.line.data': 'Gerçek haftalık erişim sayılarını virgülle yazın (ör. 48,56,52,71). Etiket sayısıyla aynı olsun. Boş bırakırsanız bu grafik görünmez.',
     'ticker.items': 'Hero altında kayan kelimeler. Boşsa şerit gizlenir.'
   };
   var TEMPLATES = { 'marquee.items': '', 'ticker.items': '', 'demo.kpis': { label: '', value: '', suffix: '', delta: '' }, 'results.items': { tag: '', title: '', text: '', metric: '', metricLabel: '' } };

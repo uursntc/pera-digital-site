@@ -230,7 +230,7 @@
           (k.delta ? '<span class="delta">' + esc(k.delta) + '</span>' : '') + '</div>';
       }).join('') + '</div>' : '') +
       (d.note ? '<p class="demo-foot reveal">' + esc(d.note) + '</p>' : '') +
-      '<div class="charts">' +
+      '<div class="charts' + (lc && bc ? '' : ' one') + '">' +
       (lc ? '<div class="panel reveal chart-line">' + panelHead(d.line) + lc + '</div>' : '') +
       (bc ? '<div class="panel reveal">' + panelHead(d.bars) + bc + '</div>' : '') + '</div>' +
       (cl.title ? '<div class="demo-close reveal">' + (cl.eyebrow ? '<p class="eyebrow">' + esc(cl.eyebrow) + '</p>' : '') +

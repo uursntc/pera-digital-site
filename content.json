@@ -222,7 +222,7 @@
       "label": "Marka bilinirliğinden müşteri kazanımına",
       "text": "Her kampanya bir hedefle başlar. Sonuçları ölçer, performansı değerlendirir ve bir sonraki adımı verilerle şekillendiririz."
     },
-    "kpiTitle": "Örnek performans özeti",
+    "kpiTitle": "Performans özeti",
     "kpis": [
       {
         "label": "Toplam erişim",
@@ -238,35 +238,35 @@
       },
       {
         "label": "Profil ziyaretleri",
-        "value": "45240",
+        "value": "147",
         "suffix": "",
         "caption": "Markaya yönelen ilgi"
       },
       {
         "label": "Potansiyel müşteri",
-        "value": "147",
+        "value": "",
         "suffix": "",
         "caption": "Form veya talep başvuruları"
       }
     ],
     "note": "",
     "line": {
-      "eyebrow": "Grafik 01",
+      "eyebrow": "Grafik",
       "title": "Markanızın erişim yolculuğu",
       "sub": "Haftalık erişim",
-      "tag": "Örnek veri",
+      "tag": "",
       "unit": " bin",
-      "labels": "1. hf,2. hf,3. hf,4. hf,5. hf,6. hf,7. hf,8. hf",
-      "data": "12,15,14,22,31,38,52,67"
+      "labels": "",
+      "data": ""
     },
     "bars": {
-      "eyebrow": "Grafik 02",
-      "title": "Hangi içerikler daha fazla ilgi görüyor?",
-      "sub": "Etkileşim oranı",
+      "eyebrow": "Grafik",
+      "title": "Markanızın erişim yolculuğu",
+      "sub": "Erişimden profil ziyaretine",
       "tag": "",
-      "unit": "%",
-      "labels": "Reels,Carousel,Statik gönderi,Story",
-      "data": "6.8,5.2,2.9,3.4"
+      "unit": "",
+      "labels": "Erişim,Etkileşim,Profil ziyareti",
+      "data": "674000,13246,147"
     },
     "closing": {
       "eyebrow": "05 / Strateji ve gelişim",
