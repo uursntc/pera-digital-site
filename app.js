@@ -206,22 +206,35 @@
     }).join('') + '</div>';
   }
 
+  function panelHead(o) {
+    return '<div class="panel-h">' + (o.eyebrow ? '<p class="eyebrow">' + esc(o.eyebrow) + '</p>' : '') +
+      '<h3>' + esc(o.title) + '</h3>' +
+      ((o.sub || o.tag) ? '<p class="panel-sub">' + esc(o.sub || '') + (o.tag ? '<span class="chip">' + esc(o.tag) + '</span>' : '') + '</p>' : '') + '</div>';
+  }
+
   function renderDemo(d) {
     var kp = arr(d.kpis).filter(function (k) { return k.value !== '' && k.label; });
     var lc = d.line ? lineChart(d.line) : '', bc = d.bars ? barChart(d.bars) : '';
+    var cl = d.closing || {};
     var sec = $('rapor'); sec.hidden = !(kp.length || lc || bc);
     if (sec.hidden) return;
+    var intro = d.intro || {};
     $('demo').innerHTML = head(d) +
-      (d.note ? '<p class="demo-note reveal"><span></span>' + esc(d.note) + '</p>' : '') +
+      (intro.label || intro.text ? '<div class="demo-intro reveal">' + (intro.label ? '<h4>' + esc(intro.label) + '</h4>' : '') + (intro.text ? '<p>' + esc(intro.text) + '</p>' : '') + '</div>' : '') +
+      (kp.length && d.kpiTitle ? '<p class="kpi-title reveal">' + esc(d.kpiTitle) + '</p>' : '') +
       (kp.length ? '<div class="kpis">' + kp.map(function (k) {
         var raw = parseFloat(String(k.value).replace(',', '.'));
         var shown = isNaN(raw) ? esc(k.value) : '<span data-count="' + raw + '">' + tr(raw) + '</span>';
         return '<div class="kpi reveal"><span class="kl">' + esc(k.label) + '</span><strong>' + shown + (k.suffix ? '<small>' + esc(k.suffix) + '</small>' : '') + '</strong>' +
+          (k.caption ? '<span class="kcap">' + esc(k.caption) + '</span>' : '') +
           (k.delta ? '<span class="delta">' + esc(k.delta) + '</span>' : '') + '</div>';
       }).join('') + '</div>' : '') +
+      (d.note ? '<p class="demo-foot reveal">' + esc(d.note) + '</p>' : '') +
       '<div class="charts">' +
-      (lc ? '<div class="panel reveal chart-line"><h3>' + esc(d.line.title) + '</h3>' + lc + '</div>' : '') +
-      (bc ? '<div class="panel reveal"><h3>' + esc(d.bars.title) + '</h3>' + bc + '</div>' : '') + '</div>';
+      (lc ? '<div class="panel reveal chart-line">' + panelHead(d.line) + lc + '</div>' : '') +
+      (bc ? '<div class="panel reveal">' + panelHead(d.bars) + bc + '</div>' : '') + '</div>' +
+      (cl.title ? '<div class="demo-close reveal">' + (cl.eyebrow ? '<p class="eyebrow">' + esc(cl.eyebrow) + '</p>' : '') +
+        '<h2>' + esc(cl.title) + '</h2>' + (cl.text ? '<p class="sub">' + esc(cl.text) + '</p>' : '') + '</div>' : '');
   }
 
   function calSrc(u) {

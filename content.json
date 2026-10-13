@@ -23,7 +23,7 @@
       "href": "#hizmetler"
     },
     {
-      "label": "Örnek rapor",
+      "label": "Performans",
       "href": "#rapor"
     },
     {
@@ -214,59 +214,75 @@
     ]
   },
   "demo": {
-    "eyebrow": "04 / Örnek rapor",
-    "title": "Rapor böyle görünür.",
+    "eyebrow": "04 / Performans raporu",
+    "title": "Dijitalde yarattığımız etki.",
     "accent": "",
-    "text": "Çalışırken neye baktığımızı göstermek için hazırladığımız örnek bir panel.",
-    "note": "",
+    "text": "Markanızın kaç kişiye ulaştığını, ne kadar ilgi gördüğünü ve kaç potansiyel müşteriye dönüştüğünü tek bir raporda takip edin.",
+    "intro": {
+      "label": "Marka bilinirliğinden müşteri kazanımına",
+      "text": "Her kampanya bir hedefle başlar. Sonuçları ölçer, performansı değerlendirir ve bir sonraki adımı verilerle şekillendiririz."
+    },
+    "kpiTitle": "Örnek performans özeti",
     "kpis": [
       {
-        "label": "Erişim",
+        "label": "Toplam erişim",
         "value": "184",
         "suffix": " bin",
-        "delta": "+38%"
+        "caption": "Ulaşılan hesaplar"
       },
       {
-        "label": "Profil ziyareti",
+        "label": "İçerik etkileşimi",
+        "value": "8420",
+        "suffix": "",
+        "caption": "Beğeni, yorum ve kaydetmeler"
+      },
+      {
+        "label": "Profil ziyaretleri",
         "value": "5240",
         "suffix": "",
-        "delta": "+62%"
+        "caption": "Markaya yönelen ilgi"
       },
       {
-        "label": "Kaydetme",
-        "value": "1380",
-        "suffix": "",
-        "delta": "+310%"
-      },
-      {
-        "label": "Form başvurusu",
+        "label": "Potansiyel müşteri",
         "value": "47",
         "suffix": "",
-        "delta": "+21"
+        "caption": "Form veya talep başvuruları"
       }
     ],
+    "note": "Tüm rakamlar örnek tasarım verisidir.",
     "line": {
-      "title": "Haftalık erişim",
+      "eyebrow": "Grafik 01",
+      "title": "Markanızın erişim yolculuğu",
+      "sub": "Haftalık erişim",
+      "tag": "Örnek veri",
       "unit": " bin",
       "labels": "1. hf,2. hf,3. hf,4. hf,5. hf,6. hf,7. hf,8. hf",
       "data": "12,15,14,22,31,38,52,67"
     },
     "bars": {
-      "title": "Kaydetmelerin içerik türüne göre dağılımı",
+      "eyebrow": "Grafik 02",
+      "title": "Hangi içerikler daha fazla ilgi görüyor?",
+      "sub": "Etkileşim oranı",
+      "tag": "Örnek veri",
       "unit": "%",
-      "labels": "Reels,Carousel,Statik,Story",
-      "data": "52,31,11,6"
+      "labels": "Reels,Carousel,Statik gönderi,Story",
+      "data": "6.8,5.2,2.9,3.4"
+    },
+    "closing": {
+      "eyebrow": "05 / Strateji ve gelişim",
+      "title": "Veriyi anlamlandırır, büyümeye dönüştürürüz.",
+      "text": "Başarılı bir dijital strateji yalnızca rakamlardan ibaret değildir. Doğru kitleye ulaşmak, ilgi uyandırmak ve bu ilgiyi işletmeniz için değerli sonuçlara dönüştürmek için her kampanyayı analiz eder, sonraki adımları buna göre planlarız."
     }
   },
   "results": {
-    "eyebrow": "05 / Sonuçlar",
+    "eyebrow": "06 / Sonuçlar",
     "title": "Sonuçlar",
     "accent": "",
     "text": "Birlikte çalıştığımız markaların sonuçları burada yer alacak.",
     "items": []
   },
   "process": {
-    "eyebrow": "06 / Süreç",
+    "eyebrow": "07 / Süreç",
     "title": "Nasıl başlıyoruz?",
     "accent": "",
     "text": "Başvurunuzdan sonra süreç şöyle ilerler.",
@@ -292,7 +308,7 @@
     ]
   },
   "apply": {
-    "eyebrow": "07 / Başvuru",
+    "eyebrow": "08 / Başvuru",
     "title": "Önce markanızı",
     "accent": "tanıyalım.",
     "text": "Kısa formu doldurun, uygunsak size dönüş yapalım.",
@@ -334,7 +350,7 @@
     ]
   },
   "faq": {
-    "eyebrow": "08 / SSS",
+    "eyebrow": "09 / SSS",
     "title": "Sıkça sorulan sorular",
     "items": [
       {
@@ -360,15 +376,15 @@
     ]
   },
   "booking": {
-    "eyebrow": "09 / Randevu",
+    "eyebrow": "10 / Randevu",
     "title": "Görüşmek için",
     "accent": "bir saat seçin.",
     "text": "Formu doldurmadan da tanışabiliriz. Size uyan günü ve saati seçin, görüşmeyi takvime ekleyelim.",
     "cta": "Yeni sekmede aç",
-    "calUrl": "https://cal.com/pera-digital-7pvagz/15min"
+    "calUrl": ""
   },
   "contact": {
-    "eyebrow": "10 / İletişim",
+    "eyebrow": "11 / İletişim",
     "title": "Bize yazın.",
     "accent": "",
     "text": "Formu doldurmak istemezseniz doğrudan e-posta gönderebilir ya da Instagram'dan mesaj atabilirsiniz.",
