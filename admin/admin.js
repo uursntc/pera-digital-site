@@ -16,15 +16,21 @@
     checks: 'Maddeler', formTitle: 'Form başlığı', submitLabel: 'Gönder butonu', successTitle: 'Başarı başlığı', successText: 'Başarı metni',
     kvkkText: 'KVKK onay metni', kvkkUrl: 'KVKK sayfası linki', endpoint: 'Form adresi (Formspree / Web3Forms)', accessKey: 'Web3Forms access key',
     mailtoFallback: 'Yedek e-posta (form adresi yoksa)', sectors: 'Sektör seçenekleri', budgets: 'Bütçe seçenekleri',
-    services_: 'Hizmet seçenekleri', q: 'Soru', a: 'Cevap', tagline: 'Slogan', copyright: 'Telif satırı'
+    services_: 'Hizmet seçenekleri', q: 'Soru', a: 'Cevap', tagline: 'Slogan', copyright: 'Telif satırı',
+    ticker: 'Kayan şerit', demo: 'Örnek rapor', booking: 'Randevu (Cal.com)', note: 'Uyarı etiketi', kpis: 'Rakam kutuları', suffix: 'Son ek (ör. bin)', delta: 'Artış / değişim',
+    line: 'Çizgi grafik', bars: 'Çubuk grafik', unit: 'Birim', labels: 'Etiketler (virgülle ayırın)', data: 'Değerler (virgülle ayırın)', calUrl: 'Cal.com linki'
   };
   var HINTS = {
     'apply.endpoint': 'Başvuruların e-postanıza düşmesi için: formspree.io\'dan ücretsiz form açın, verilen adresi (https://formspree.io/f/xxxx) buraya yapıştırın.',
     'site.logo': 'Logoyu depodaki assets klasörüne yükleyip yolunu yazın (ör. assets/logo.png).',
     'results.items': 'Vaka eklemezseniz Sonuçlar bölümü ve menüdeki linki sitede otomatik gizlenir. “Başlık buraya gelecek” gibi örnekleri silin ya da doldurun.',
-    'hero.stats': 'Değeri boş bırakılan rakamlar sitede görünmez.'
+    'hero.stats': 'Değeri boş bırakılan rakamlar sitede görünmez.',
+    'booking.calUrl': 'cal.com\'da hesap açıp bir etkinlik oluşturun, linkini (ör. https://cal.com/kullaniciadi/gorusme) buraya yapıştırın. Boş bırakırsanız Randevu bölümü ve menüdeki linki gizlenir.',
+    'demo.note': 'Bu bölüm örnek veri gösterir. Gerçek müşteri sonucu gibi sunmayın; gerçek rakamlarınız olunca burayı gerçek verilerle değiştirin ya da kutuları boşaltıp bölümü gizleyin.',
+    'demo.line.data': 'Sayıları virgülle yazın (ör. 12,15,22,31). Etiket sayısıyla aynı olsun.',
+    'ticker.items': 'Hero altında kayan kelimeler. Boşsa şerit gizlenir.'
   };
-  var TEMPLATES = { 'marquee.items': '', 'results.items': { tag: '', title: '', text: '', metric: '', metricLabel: '' } };
+  var TEMPLATES = { 'marquee.items': '', 'ticker.items': '', 'demo.kpis': { label: '', value: '', suffix: '', delta: '' }, 'results.items': { tag: '', title: '', text: '', metric: '', metricLabel: '' } };
   var LONG = /^(text|a|description|q|successText|kvkkText)$/;
 
   function label(k, path) {
@@ -205,6 +211,7 @@
 
   /* ---------- init: GitHub Pages adresinden otomatik doldur ---------- */
   var c = cfg();
+  if (/(^|\.)peradijital\.com$/.test(location.hostname)) { c.owner = c.owner || 'uursntc'; c.repo = c.repo || 'pera-digital-site'; }
   var m = location.hostname.match(/^([^.]+)\.github\.io$/);
   if (m) {
     c.owner = c.owner || m[1];

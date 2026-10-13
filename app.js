@@ -58,6 +58,13 @@
     $('heroStats').innerHTML = stats.map(function (x) { return '<div><dt>' + esc(x.value) + '</dt><dd>' + esc(x.label) + '</dd></div>'; }).join('');
     $('heroStats').hidden = !stats.length;
 
+    var tk = arr((c.ticker || {}).items).filter(Boolean);
+    $('tickerSec').hidden = !tk.length;
+    if (tk.length) {
+      var half = ''; for (var n = 0; n < Math.ceil(12 / tk.length); n++) half += tk.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('');
+      $('tickerTrack').innerHTML = '<div>' + half + '</div><div>' + half + '</div>';
+    }
+
     var m = c.marquee || {};
     if (arr(m.items).length) {
       $('marqueeSec').hidden = false; $('marqueeTitle').textContent = m.title || '';
@@ -95,8 +102,7 @@
         (i.metric ? '<div class="metric">' + esc(i.metric) + '</div><div class="metric-l">' + esc(i.metricLabel) + '</div>' : '') +
         '<h3>' + esc(i.title) + '</h3><p>' + esc(i.text) + '</p></article>';
     }).join('') + '</div>';
-    // sonuçlar linkini menüden de gizle
-    if (!rs.length) document.querySelectorAll('#navLinks a[href="#sonuclar"]').forEach(function (x) { x.hidden = true; });
+    // boş bölümlerin menü linkini de gizle (bölümler en sonda render edilir, aşağıda hideNav çağrılır)
 
     var p = c.process || {};
     $('process').innerHTML = head(p) + '<div class="proc">' + arr(p.steps).map(function (i) {
@@ -131,6 +137,9 @@
         (i.href ? '<a class="btn btn-sm" href="' + esc(safeUrl(i.href)) + '"' + ext + '>' + esc(i.cta || 'Git') + '</a>' : '') + '</article>';
     }).join('') + '</div>';
 
+    renderDemo(c.demo || {});
+    renderBooking(c.booking || {});
+
     var ft = c.footer || {};
     $('footName').textContent = s.name || ''; $('footTag').textContent = ft.tagline || ''; $('footCopy').textContent = ft.copyright || '';
     var links = [];
@@ -138,7 +147,110 @@
     if (s.instagramUrl) links.push('<a href="' + esc(safeUrl(s.instagramUrl)) + '" target="_blank" rel="noopener">@' + esc(String(s.instagram || '').replace(/^@/, '')) + '</a>');
     $('footLinks').innerHTML = links.join('');
 
+    hideNav('#sonuclar', !rs.length);
+    hideNav('#rapor', $('rapor').hidden);
+    hideNav('#randevu', $('randevu').hidden);
+    heroCycle();
     reveal();
+  }
+
+  function hideNav(href, off) {
+    document.querySelectorAll('#navLinks a[href="' + href + '"]').forEach(function (x) { x.hidden = !!off; });
+  }
+
+  function list2(s) { return String(s || '').split(',').map(function (x) { return x.trim(); }).filter(function (x) { return x !== ''; }); }
+  function num2(s) { return list2(s).map(function (x) { return parseFloat(x); }).filter(function (x) { return !isNaN(x); }); }
+  var tr = function (n) { try { return Number(n).toLocaleString('tr-TR'); } catch (e) { return String(n); } };
+
+  function smoothPath(pts) {
+    var d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      d += ' C' + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + ' ' + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) + ' ' +
+        (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + ' ' + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) + ' ' + p2[0].toFixed(1) + ' ' + p2[1].toFixed(1);
+    }
+    return d;
+  }
+
+  function lineChart(o) {
+    var v = num2(o.data), lb = list2(o.labels);
+    if (v.length < 2) return '';
+    var W = 640, H = 270, L = 46, R = 22, T = 22, B = 36, unit = o.unit || '';
+    var mx = Math.max.apply(null, v), mag = Math.pow(10, Math.floor(Math.log10(mx || 1)));
+    var top = Math.ceil(mx / mag * 2) / 2 * mag || 1;
+    var X = function (i) { return L + i * (W - L - R) / (v.length - 1); };
+    var Y = function (x) { return T + (1 - x / top) * (H - T - B); };
+    var pts = v.map(function (x, i) { return [X(i), Y(x)]; });
+    var line = smoothPath(pts);
+    var area = line + ' L' + X(v.length - 1).toFixed(1) + ' ' + Y(0) + ' L' + X(0).toFixed(1) + ' ' + Y(0) + ' Z';
+    var g = '';
+    for (var t = 0; t <= 4; t++) {
+      var val = top * t / 4, y = Y(val);
+      g += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y + '" y2="' + y + '" class="gl"/><text x="' + (L - 10) + '" y="' + (y + 4) + '" text-anchor="end" class="ax">' + tr(Math.round(val * 10) / 10) + '</text>';
+    }
+    var xl = v.map(function (x, i) { return '<text x="' + X(i) + '" y="' + (H - 10) + '" text-anchor="middle" class="ax">' + esc(lb[i] || '') + '</text>'; }).join('');
+    var dots = pts.map(function (p, i) {
+      return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="' + (i === v.length - 1 ? 6 : 3.6) + '" class="dot' + (i === v.length - 1 ? ' last' : '') + '" style="--i:' + i + '"><title>' + esc((lb[i] || '') + ': ' + tr(v[i]) + unit) + '</title></circle>';
+    }).join('');
+    var lastTxt = '<text x="' + (pts[v.length - 1][0] - 4) + '" y="' + (pts[v.length - 1][1] - 16) + '" text-anchor="end" class="lastv">' + esc(tr(v[v.length - 1]) + unit) + '</text>';
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(o.title || 'Grafik') + '"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDDCC4" stop-opacity=".38"/><stop offset="1" stop-color="#EDDCC4" stop-opacity="0"/></linearGradient></defs>' +
+      g + xl + '<path d="' + area + '" class="area"/><path d="' + line + '" class="lp" pathLength="1"/>' + dots + lastTxt + '</svg>';
+  }
+
+  function barChart(o) {
+    var v = num2(o.data), lb = list2(o.labels);
+    if (!v.length) return '';
+    var mx = Math.max.apply(null, v) || 1;
+    return '<div class="bars">' + v.map(function (x, i) {
+      return '<div class="brow"><span class="bl">' + esc(lb[i] || '') + '</span><span class="bt"><i style="--w:' + (x / mx * 100).toFixed(1) + '%;--i:' + i + '"></i></span><span class="bv">' + esc(tr(x) + (o.unit || '')) + '</span></div>';
+    }).join('') + '</div>';
+  }
+
+  function renderDemo(d) {
+    var kp = arr(d.kpis).filter(function (k) { return k.value !== '' && k.label; });
+    var lc = d.line ? lineChart(d.line) : '', bc = d.bars ? barChart(d.bars) : '';
+    var sec = $('rapor'); sec.hidden = !(kp.length || lc || bc);
+    if (sec.hidden) return;
+    $('demo').innerHTML = head(d) +
+      (d.note ? '<p class="demo-note reveal"><span></span>' + esc(d.note) + '</p>' : '') +
+      (kp.length ? '<div class="kpis">' + kp.map(function (k) {
+        var raw = parseFloat(String(k.value).replace(',', '.'));
+        var shown = isNaN(raw) ? esc(k.value) : '<span data-count="' + raw + '">' + tr(raw) + '</span>';
+        return '<div class="kpi reveal"><span class="kl">' + esc(k.label) + '</span><strong>' + shown + (k.suffix ? '<small>' + esc(k.suffix) + '</small>' : '') + '</strong>' +
+          (k.delta ? '<span class="delta">' + esc(k.delta) + '</span>' : '') + '</div>';
+      }).join('') + '</div>' : '') +
+      '<div class="charts">' +
+      (lc ? '<div class="panel reveal chart-line"><h3>' + esc(d.line.title) + '</h3>' + lc + '</div>' : '') +
+      (bc ? '<div class="panel reveal"><h3>' + esc(d.bars.title) + '</h3>' + bc + '</div>' : '') + '</div>';
+  }
+
+  function calSrc(u) {
+    u = String(u || '').trim(); if (!u) return '';
+    if (!/^https?:\/\//i.test(u)) u = 'https://cal.com/' + u.replace(/^\/+/, '');
+    try {
+      var x = new URL(u);
+      if (!/^(([a-z0-9-]+\.)?cal\.com|cal\.eu|app\.cal\.eu)$/i.test(x.hostname) || x.protocol !== 'https:') return '';
+      return x.href;
+    } catch (e) { return ''; }
+  }
+
+  function renderBooking(b) {
+    var url = calSrc(b.calUrl), sec = $('randevu'); sec.hidden = !url;
+    if (!url) return;
+    var emb = new URL(url); emb.searchParams.set('embed', 'true'); emb.searchParams.set('theme', 'light');
+    $('booking').innerHTML = '<div class="book"><div class="reveal">' + (b.eyebrow ? '<p class="eyebrow">' + esc(b.eyebrow) + '</p>' : '') +
+      '<h2>' + esc(b.title) + (b.accent ? ' <em>' + esc(b.accent) + '</em>' : '') + '</h2>' +
+      (b.text ? '<p class="sub">' + esc(b.text) + '</p>' : '') +
+      '<p style="margin-top:28px"><a class="btn btn-sm" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(b.cta || 'Yeni sekmede aç') + '</a></p></div>' +
+      '<div class="cal reveal"><iframe src="' + esc(emb.href) + '" title="Randevu takvimi" loading="lazy"></iframe></div></div>';
+  }
+
+  function heroCycle() {
+    var li = document.querySelectorAll('.steps-mini li');
+    if (!li.length) return;
+    var i = 0; li[0].classList.add('on');
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    setInterval(function () { li[i].classList.remove('on'); i = (i + 1) % li.length; li[i].classList.add('on'); }, 2200);
   }
 
   function setupForm(ap, site) {
@@ -179,14 +291,43 @@
     });
   }
 
+  function countUp(el) {
+    var end = parseFloat(el.getAttribute('data-count')), t0 = null, dur = 1400;
+    if (isNaN(end)) return;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = tr(Math.round(end * e));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    el.textContent = '0'; requestAnimationFrame(step);
+  }
+
   function reveal() {
-    var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var els = document.querySelectorAll('.reveal'), counts = document.querySelectorAll('[data-count]');
+    var still = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if (!('IntersectionObserver' in window) || still) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    els.forEach(function (e) {
+      var sib = e.parentNode ? [].filter.call(e.parentNode.children, function (x) { return x.classList.contains('reveal'); }) : [];
+      var d = Math.min(sib.indexOf(e), 5) * 90; if (d > 0) e.style.transitionDelay = d + 'ms';
+    });
     var io = new IntersectionObserver(function (en) {
-      en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+      en.forEach(function (x) {
+        if (!x.isIntersecting) return;
+        var t = x.target; t.classList.add('in'); io.unobserve(t);
+        setTimeout(function () { t.style.transitionDelay = ''; }, 1200);
+      });
     }, { threshold: .08 });
     els.forEach(function (e) { io.observe(e); });
+    var io2 = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { countUp(x.target); io2.unobserve(x.target); } });
+    }, { threshold: .6 });
+    counts.forEach(function (e) { io2.observe(e); });
   }
+
+  var bar = $('progress');
+  function prog() { var h = document.documentElement; var m = h.scrollHeight - h.clientHeight; bar.style.transform = 'scaleX(' + (m > 0 ? Math.min(1, h.scrollTop / m) : 0) + ')'; }
+  window.addEventListener('scroll', prog, { passive: true }); prog();
 
   var burger = $('burger'), links = $('navLinks');
   burger.addEventListener('click', function () {

@@ -23,12 +23,20 @@
       "href": "#hizmetler"
     },
     {
+      "label": "Örnek rapor",
+      "href": "#rapor"
+    },
+    {
       "label": "Sonuçlar",
       "href": "#sonuclar"
     },
     {
       "label": "Başvuru",
       "href": "#basvuru"
+    },
+    {
+      "label": "Randevu",
+      "href": "#randevu"
     },
     {
       "label": "İletişim",
@@ -65,6 +73,16 @@
         "value": "",
         "label": "Deneyim"
       }
+    ]
+  },
+  "ticker": {
+    "items": [
+      "Meta Reklamları",
+      "Sosyal Medya",
+      "Marka Stratejisi",
+      "Web Sitesi",
+      "İçerik",
+      "Performans"
     ]
   },
   "marquee": {
@@ -195,15 +213,60 @@
       "Teknoloji"
     ]
   },
+  "demo": {
+    "eyebrow": "04 / Örnek rapor",
+    "title": "Rapor böyle görünür.",
+    "accent": "",
+    "text": "Çalışırken neye baktığımızı göstermek için hazırladığımız örnek bir panel.",
+    "note": "Örnek veri · Gerçek bir müşteri sonucu değildir",
+    "kpis": [
+      {
+        "label": "Erişim",
+        "value": "184",
+        "suffix": " bin",
+        "delta": "+38%"
+      },
+      {
+        "label": "Profil ziyareti",
+        "value": "5240",
+        "suffix": "",
+        "delta": "+62%"
+      },
+      {
+        "label": "Kaydetme",
+        "value": "1380",
+        "suffix": "",
+        "delta": "+310%"
+      },
+      {
+        "label": "Form başvurusu",
+        "value": "47",
+        "suffix": "",
+        "delta": "+21"
+      }
+    ],
+    "line": {
+      "title": "Haftalık erişim",
+      "unit": " bin",
+      "labels": "1. hf,2. hf,3. hf,4. hf,5. hf,6. hf,7. hf,8. hf",
+      "data": "12,15,14,22,31,38,52,67"
+    },
+    "bars": {
+      "title": "Kaydetmelerin içerik türüne göre dağılımı",
+      "unit": "%",
+      "labels": "Reels,Carousel,Statik,Story",
+      "data": "52,31,11,6"
+    }
+  },
   "results": {
-    "eyebrow": "04 / Sonuçlar",
+    "eyebrow": "05 / Sonuçlar",
     "title": "Sonuçlar",
     "accent": "",
     "text": "Birlikte çalıştığımız markaların sonuçları burada yer alacak.",
     "items": []
   },
   "process": {
-    "eyebrow": "05 / Süreç",
+    "eyebrow": "06 / Süreç",
     "title": "Nasıl başlıyoruz?",
     "accent": "",
     "text": "Başvurunuzdan sonra süreç şöyle ilerler.",
@@ -229,7 +292,7 @@
     ]
   },
   "apply": {
-    "eyebrow": "06 / Başvuru",
+    "eyebrow": "07 / Başvuru",
     "title": "Önce markanızı",
     "accent": "tanıyalım.",
     "text": "Kısa formu doldurun, uygunsak size dönüş yapalım.",
@@ -244,7 +307,7 @@
     "successText": "En kısa sürede size dönüş yapacağız.",
     "kvkkText": "Kişisel verilerimin başvuru değerlendirmesi amacıyla işlenmesini kabul ediyorum.",
     "kvkkUrl": "",
-    "endpoint": "https://formspree.io/f/maeqdplp",
+    "endpoint": "",
     "accessKey": "",
     "mailtoFallback": "",
     "sectors": [
@@ -271,7 +334,7 @@
     ]
   },
   "faq": {
-    "eyebrow": "07 / SSS",
+    "eyebrow": "08 / SSS",
     "title": "Sıkça sorulan sorular",
     "items": [
       {
@@ -296,8 +359,16 @@
       }
     ]
   },
+  "booking": {
+    "eyebrow": "09 / Randevu",
+    "title": "Görüşmek için",
+    "accent": "bir saat seçin.",
+    "text": "Formu doldurmadan da tanışabiliriz. Size uyan günü ve saati seçin, görüşmeyi takvime ekleyelim.",
+    "cta": "Yeni sekmede aç",
+    "calUrl": ""
+  },
   "contact": {
-    "eyebrow": "08 / İletişim",
+    "eyebrow": "10 / İletişim",
     "title": "Bize yazın.",
     "accent": "",
     "text": "Formu doldurmak istemezseniz doğrudan e-posta gönderebilir ya da Instagram'dan mesaj atabilirsiniz.",
