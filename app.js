@@ -214,44 +214,57 @@
 
   function pct(x) { return '%' + x.toLocaleString('tr-TR', { minimumFractionDigits: x < 10 ? 2 : 0, maximumFractionDigits: 2 }); }
 
-  function peoplePanel(d, f) {
-    if (!d.people || f.length < 2 || !f[0]) return '';
-    var p = f[1] / f[0] * 100, n = Math.max(p > 0 ? 1 : 0, Math.round(p)), dots = '';
-    for (var i = 0; i < 100; i++) dots += '<i class="' + (i < n ? 'hot' : '') + '" style="--i:' + i + '"></i>';
-    var t = String(d.people.text || '').replace('{n}', n);
-    return '<div class="panel reveal people">' + panelHead(d.people) +
-      '<div class="people-grid"><div class="dots" aria-hidden="true">' + dots + '</div>' +
-      '<div class="people-side"><strong>' + esc(pct(p)) + '</strong><span>' + esc(t) + '</span></div></div>' +
-      (d.people.note ? '<p class="panel-note">' + esc(d.people.note) + '</p>' : '') + '</div>';
+  function dotsHtml(p) {
+    var n = Math.max(p > 0 ? 1 : 0, Math.round(p)), h = '';
+    for (var i = 0; i < 100; i++) h += '<i class="' + (i < n ? 'hot' : '') + '" style="--i:' + i + '"></i>';
+    return { html: '<div class="dots2" aria-hidden="true">' + h + '</div>', n: n };
+  }
+  function numHtml(k) {
+    var raw = parseFloat(String(k.value).replace(',', '.'));
+    var shown = isNaN(raw) ? esc(k.value) : '<span data-count="' + raw + '">' + tr(raw) + '</span>';
+    return shown + (k.suffix ? '<small>' + esc(k.suffix) + '</small>' : '');
+  }
+  function kcard(cls, k, extra) {
+    return '<div class="bc ' + cls + ' reveal"><span class="lab">' + esc(k.label) + '</span><div class="big">' + numHtml(k) + '</div>' +
+      (k.caption ? '<p class="cap">' + esc(k.caption) + '</p>' : '') + (extra || '') + '</div>';
+  }
+  function ratioBlock(o, p, label) {
+    if (!o) return '';
+    var dt = dotsHtml(p);
+    return '<div class="rb">' + (o.title ? '<p class="rt">' + esc(o.title) + '</p>' : '') + dt.html +
+      '<p class="dnote"><b>' + esc(pct(p)) + '</b> ' + esc(label || '') + (o.text ? ' · ' + esc(String(o.text).replace('{n}', dt.n)) : '') + '</p></div>';
   }
 
   function renderDemo(d) {
     var kp = arr(d.kpis).filter(function (k) { return k.value !== '' && k.label; });
-    var lc = d.line ? lineChart(d.line) : '', bc = d.bars ? barChart(d.bars) : '';
-    var fd = d.bars ? num2(d.bars.data) : [];
-    var pp = peoplePanel(d, fd);
-    var rl = arr(d.ratioLabels);
-    var cl = d.closing || {};
-    var sec = $('rapor'); sec.hidden = !(kp.length || lc || bc);
+    var lc = d.line ? lineChart(d.line) : '';
+    var fd = d.bars ? num2(d.bars.data) : [], fl = d.bars ? list2(d.bars.labels) : [];
+    var rl = arr(d.ratioLabels), cl = d.closing || {}, intro = d.intro || {};
+    var sec = $('rapor'); sec.hidden = !(kp.length || lc || fd.length);
     if (sec.hidden) return;
-    var intro = d.intro || {};
-    var np = (lc ? 1 : 0) + (bc ? 1 : 0) + (pp ? 1 : 0);
-    $('demo').innerHTML = head(d) +
-      (intro.label || intro.text ? '<div class="demo-intro reveal">' + (intro.label ? '<h4>' + esc(intro.label) + '</h4>' : '') + (intro.text ? '<p>' + esc(intro.text) + '</p>' : '') + '</div>' : '') +
-      (kp.length && d.kpiTitle ? '<p class="kpi-title reveal">' + esc(d.kpiTitle) + '</p>' : '') +
-      (kp.length ? '<div class="kpis">' + kp.map(function (k, i) {
-        var raw = parseFloat(String(k.value).replace(',', '.'));
-        var shown = isNaN(raw) ? esc(k.value) : '<span data-count="' + raw + '">' + tr(raw) + '</span>';
-        var ratio = (i > 0 && rl[i] && fd.length > i && fd[i - 1]) ? pct(fd[i] / fd[i - 1] * 100) + ' ' + rl[i] : '';
-        return '<div class="kpi reveal"><span class="kl">' + esc(k.label) + '</span><strong>' + shown + (k.suffix ? '<small>' + esc(k.suffix) + '</small>' : '') + '</strong>' +
-          (k.caption ? '<span class="kcap">' + esc(k.caption) + '</span>' : '') +
-          (ratio ? '<span class="ratio">' + esc(ratio) + '</span>' : '') +
-          (k.delta ? '<span class="delta">' + esc(k.delta) + '</span>' : '') + '</div>';
-      }).join('') + '</div>' : '') +
-      (d.note ? '<p class="demo-foot reveal">' + esc(d.note) + '</p>' : '') +
-      '<div class="charts' + (np > 1 ? '' : ' one') + '">' +
-      (lc ? '<div class="panel reveal chart-line">' + panelHead(d.line) + lc + '</div>' : '') +
-      (bc ? '<div class="panel reveal">' + panelHead(d.bars) + bc + (d.bars.note ? '<p class="panel-note">' + esc(d.bars.note) + '</p>' : '') + '</div>' : '') + pp + '</div>' +
+    var p1 = fd.length > 1 && fd[0] ? fd[1] / fd[0] * 100 : 0, p2 = fd.length > 2 && fd[1] ? fd[2] / fd[1] * 100 : 0;
+
+    var row1 = '<div class="bc bc-intro reveal">' + (d.eyebrow ? '<p class="eyebrow">' + esc(d.eyebrow) + '</p>' : '') +
+      '<h2>' + esc(d.title) + (d.accent ? ' <em>' + esc(d.accent) + '</em>' : '') + '</h2>' +
+      (d.text ? '<p class="sub">' + esc(d.text) + '</p>' : '') +
+      (intro.label || intro.text ? '<div class="intro-chip">' + (intro.label ? '<b>' + esc(intro.label) + '</b>' : '') + (intro.text ? '<span>' + esc(intro.text) + '</span>' : '') + '</div>' : '') + '</div>';
+    if (kp[0]) row1 += kcard('bc-dark', kp[0], '<div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>');
+
+    var row2 = '';
+    if (kp[1]) row2 += kcard('bc-terra', kp[1], p1 ? ratioBlock(d.people, p1, rl[1]) : '');
+    if (kp[2]) row2 += kcard('bc-sage', kp[2], p2 ? ratioBlock(d.people2, p2, rl[2]) : '');
+    if (fd.length > 1 && d.bars) {
+      row2 += '<div class="bc bc-sky reveal"><span class="lab">' + esc(d.bars.sub || '') + '</span><h3>' + esc(d.bars.title) + '</h3>' + (d.bars.text ? '<p class="cap">' + esc(d.bars.text) + '</p>' : '') + '<ol class="steps">' +
+        fd.map(function (v, i) {
+          var r = i > 0 && fd[i - 1] ? pct(v / fd[i - 1] * 100) : '';
+          return '<li class="' + (i === fd.length - 1 ? 'last' : '') + '"><span>' + esc(fl[i] || '') + '</span><b>' + esc(tr(v)) + '</b>' + (r ? '<em>' + esc(r) + '</em>' : '') + '</li>';
+        }).join('') + '</ol></div>';
+    }
+    kp.slice(3).forEach(function (k) { row2 += kcard('bc-blush', k); });
+    if (lc) row2 += '<div class="bc bc-line reveal">' + panelHead(d.line) + lc + '</div>';
+
+    $('demo').innerHTML = '<div class="bento">' + row1 + '</div><div class="bento2">' + row2 + '</div>' +
+      ((d.people && d.people.note) || d.note ? '<p class="demo-foot reveal">' + esc(d.note || d.people.note) + '</p>' : '') +
       (cl.title ? '<div class="demo-close reveal">' + (cl.eyebrow ? '<p class="eyebrow">' + esc(cl.eyebrow) + '</p>' : '') +
         '<h2>' + esc(cl.title) + '</h2>' + (cl.text ? '<p class="sub">' + esc(cl.text) + '</p>' : '') + '</div>' : '');
   }

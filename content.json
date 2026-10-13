@@ -23,10 +23,6 @@
       "href": "#hizmetler"
     },
     {
-      "label": "Performans",
-      "href": "#rapor"
-    },
-    {
       "label": "Sonuçlar",
       "href": "#sonuclar"
     },
@@ -213,88 +209,15 @@
       "Teknoloji"
     ]
   },
-  "demo": {
-    "eyebrow": "04 / Performans raporu",
-    "title": "Dijitalde yarattığımız etki.",
-    "accent": "",
-    "text": "Markanızın kaç kişiye ulaştığını, ne kadar ilgi gördüğünü ve kaç potansiyel müşteriye dönüştüğünü tek bir raporda takip edin.",
-    "intro": {
-      "label": "Marka bilinirliğinden müşteri kazanımına",
-      "text": "Her kampanya bir hedefle başlar. Sonuçları ölçer, performansı değerlendirir ve bir sonraki adımı verilerle şekillendiririz."
-    },
-    "kpiTitle": "Performans özeti",
-    "kpis": [
-      {
-        "label": "Toplam erişim",
-        "value": "674",
-        "suffix": " bin",
-        "caption": "Ulaşılan hesaplar"
-      },
-      {
-        "label": "İçerik etkileşimi",
-        "value": "13246",
-        "suffix": "",
-        "caption": "Beğeni, yorum ve kaydetmeler"
-      },
-      {
-        "label": "Profil ziyaretleri",
-        "value": "147",
-        "suffix": "",
-        "caption": "Markaya yönelen ilgi"
-      },
-      {
-        "label": "Potansiyel müşteri",
-        "value": "",
-        "suffix": "",
-        "caption": "Form veya talep başvuruları"
-      }
-    ],
-    "note": "",
-    "line": {
-      "eyebrow": "Grafik",
-      "title": "Markanızın erişim yolculuğu",
-      "sub": "Haftalık erişim",
-      "tag": "",
-      "unit": " bin",
-      "labels": "",
-      "data": ""
-    },
-    "bars": {
-      "eyebrow": "Grafik",
-      "title": "Markanızın erişim yolculuğu",
-      "sub": "Erişimden profil ziyaretine",
-      "tag": "",
-      "unit": "",
-      "labels": "Erişim,Etkileşim,Profil ziyareti",
-      "data": "674000,13246,147",
-      "note": "Çubuklar aynı ölçekte gösterilir."
-    },
-    "closing": {
-      "eyebrow": "05 / Strateji ve gelişim",
-      "title": "Veriyi anlamlandırır, büyümeye dönüştürürüz.",
-      "text": "Başarılı bir dijital strateji yalnızca rakamlardan ibaret değildir. Doğru kitleye ulaşmak, ilgi uyandırmak ve bu ilgiyi işletmeniz için değerli sonuçlara dönüştürmek için her kampanyayı analiz eder, sonraki adımları buna göre planlarız."
-    },
-    "ratioLabels": [
-      "",
-      "etkileşim oranı",
-      "etkileşimden profile geçiş"
-    ],
-    "people": {
-      "eyebrow": "Grafik",
-      "title": "Erişilen 100 kişiden kaçı ilgi gösterdi?",
-      "text": "Her 100 kişiden yaklaşık {n} kişi içerikle etkileşime girdi.",
-      "note": "Etkileşim oranı = etkileşim ÷ erişim"
-    }
-  },
   "results": {
-    "eyebrow": "06 / Sonuçlar",
+    "eyebrow": "Sonuçlar",
     "title": "Sonuçlar",
     "accent": "",
     "text": "Birlikte çalıştığımız markaların sonuçları burada yer alacak.",
     "items": []
   },
   "process": {
-    "eyebrow": "07 / Süreç",
+    "eyebrow": "04 / Süreç",
     "title": "Nasıl başlıyoruz?",
     "accent": "",
     "text": "Başvurunuzdan sonra süreç şöyle ilerler.",
@@ -320,7 +243,7 @@
     ]
   },
   "apply": {
-    "eyebrow": "08 / Başvuru",
+    "eyebrow": "05 / Başvuru",
     "title": "Önce markanızı",
     "accent": "tanıyalım.",
     "text": "Kısa formu doldurun, uygunsak size dönüş yapalım.",
@@ -362,7 +285,7 @@
     ]
   },
   "faq": {
-    "eyebrow": "09 / SSS",
+    "eyebrow": "06 / SSS",
     "title": "Sıkça sorulan sorular",
     "items": [
       {
@@ -388,7 +311,7 @@
     ]
   },
   "booking": {
-    "eyebrow": "10 / Randevu",
+    "eyebrow": "07 / Randevu",
     "title": "Görüşmek için",
     "accent": "bir saat seçin.",
     "text": "Formu doldurmadan da tanışabiliriz. Size uyan günü ve saati seçin, görüşmeyi takvime ekleyelim.",
@@ -396,7 +319,7 @@
     "calUrl": ""
   },
   "contact": {
-    "eyebrow": "11 / İletişim",
+    "eyebrow": "08 / İletişim",
     "title": "Bize yazın.",
     "accent": "",
     "text": "Formu doldurmak istemezseniz doğrudan e-posta gönderebilir ya da Instagram'dan mesaj atabilirsiniz.",
