@@ -17,7 +17,7 @@
     kvkkText: 'KVKK onay metni', kvkkUrl: 'KVKK sayfası linki', endpoint: 'Form adresi (Formspree / Web3Forms)', accessKey: 'Web3Forms access key',
     mailtoFallback: 'Yedek e-posta (form adresi yoksa)', sectors: 'Sektör seçenekleri', budgets: 'Bütçe seçenekleri',
     services_: 'Hizmet seçenekleri', q: 'Soru', a: 'Cevap', tagline: 'Slogan', copyright: 'Telif satırı',
-    ticker: 'Kayan şerit', demo: 'Örnek rapor', booking: 'Randevu (Cal.com)', note: 'Dipnot', intro: 'Giriş bloğu', kpiTitle: 'Kutular üstü başlık', caption: 'Alt açıklama', sub: 'Alt başlık', closing: 'Kapanış bloğu', kpis: 'Rakam kutuları', suffix: 'Son ek (ör. bin)', delta: 'Artış / değişim',
+    ticker: 'Kayan şerit', demo: 'Örnek rapor', booking: 'Randevu (Cal.com)', note: 'Dipnot', intro: 'Giriş bloğu', kpiTitle: 'Kutular üstü başlık', caption: 'Alt açıklama', sub: 'Alt başlık', closing: 'Kapanış bloğu', people: '100 kişi görseli', ratioLabels: 'Oran etiketleri (karttaki küçük yüzdeler)', kpis: 'Rakam kutuları', suffix: 'Son ek (ör. bin)', delta: 'Artış / değişim',
     line: 'Çizgi grafik', bars: 'Çubuk grafik', unit: 'Birim', labels: 'Etiketler (virgülle ayırın)', data: 'Değerler (virgülle ayırın)', calUrl: 'Cal.com linki'
   };
   var HINTS = {

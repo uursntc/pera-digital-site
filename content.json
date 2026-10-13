@@ -266,12 +266,24 @@
       "tag": "",
       "unit": "",
       "labels": "Erişim,Etkileşim,Profil ziyareti",
-      "data": "674000,13246,147"
+      "data": "674000,13246,147",
+      "note": "Çubuklar aynı ölçekte gösterilir."
     },
     "closing": {
       "eyebrow": "05 / Strateji ve gelişim",
       "title": "Veriyi anlamlandırır, büyümeye dönüştürürüz.",
       "text": "Başarılı bir dijital strateji yalnızca rakamlardan ibaret değildir. Doğru kitleye ulaşmak, ilgi uyandırmak ve bu ilgiyi işletmeniz için değerli sonuçlara dönüştürmek için her kampanyayı analiz eder, sonraki adımları buna göre planlarız."
+    },
+    "ratioLabels": [
+      "",
+      "etkileşim oranı",
+      "etkileşimden profile geçiş"
+    ],
+    "people": {
+      "eyebrow": "Grafik",
+      "title": "Erişilen 100 kişiden kaçı ilgi gösterdi?",
+      "text": "Her 100 kişiden yaklaşık {n} kişi içerikle etkileşime girdi.",
+      "note": "Etkileşim oranı = etkileşim ÷ erişim"
     }
   },
   "results": {

@@ -212,27 +212,46 @@
       ((o.sub || o.tag) ? '<p class="panel-sub">' + esc(o.sub || '') + (o.tag ? '<span class="chip">' + esc(o.tag) + '</span>' : '') + '</p>' : '') + '</div>';
   }
 
+  function pct(x) { return '%' + x.toLocaleString('tr-TR', { minimumFractionDigits: x < 10 ? 2 : 0, maximumFractionDigits: 2 }); }
+
+  function peoplePanel(d, f) {
+    if (!d.people || f.length < 2 || !f[0]) return '';
+    var p = f[1] / f[0] * 100, n = Math.max(p > 0 ? 1 : 0, Math.round(p)), dots = '';
+    for (var i = 0; i < 100; i++) dots += '<i class="' + (i < n ? 'hot' : '') + '" style="--i:' + i + '"></i>';
+    var t = String(d.people.text || '').replace('{n}', n);
+    return '<div class="panel reveal people">' + panelHead(d.people) +
+      '<div class="people-grid"><div class="dots" aria-hidden="true">' + dots + '</div>' +
+      '<div class="people-side"><strong>' + esc(pct(p)) + '</strong><span>' + esc(t) + '</span></div></div>' +
+      (d.people.note ? '<p class="panel-note">' + esc(d.people.note) + '</p>' : '') + '</div>';
+  }
+
   function renderDemo(d) {
     var kp = arr(d.kpis).filter(function (k) { return k.value !== '' && k.label; });
     var lc = d.line ? lineChart(d.line) : '', bc = d.bars ? barChart(d.bars) : '';
+    var fd = d.bars ? num2(d.bars.data) : [];
+    var pp = peoplePanel(d, fd);
+    var rl = arr(d.ratioLabels);
     var cl = d.closing || {};
     var sec = $('rapor'); sec.hidden = !(kp.length || lc || bc);
     if (sec.hidden) return;
     var intro = d.intro || {};
+    var np = (lc ? 1 : 0) + (bc ? 1 : 0) + (pp ? 1 : 0);
     $('demo').innerHTML = head(d) +
       (intro.label || intro.text ? '<div class="demo-intro reveal">' + (intro.label ? '<h4>' + esc(intro.label) + '</h4>' : '') + (intro.text ? '<p>' + esc(intro.text) + '</p>' : '') + '</div>' : '') +
       (kp.length && d.kpiTitle ? '<p class="kpi-title reveal">' + esc(d.kpiTitle) + '</p>' : '') +
-      (kp.length ? '<div class="kpis">' + kp.map(function (k) {
+      (kp.length ? '<div class="kpis">' + kp.map(function (k, i) {
         var raw = parseFloat(String(k.value).replace(',', '.'));
         var shown = isNaN(raw) ? esc(k.value) : '<span data-count="' + raw + '">' + tr(raw) + '</span>';
+        var ratio = (i > 0 && rl[i] && fd.length > i && fd[i - 1]) ? pct(fd[i] / fd[i - 1] * 100) + ' ' + rl[i] : '';
         return '<div class="kpi reveal"><span class="kl">' + esc(k.label) + '</span><strong>' + shown + (k.suffix ? '<small>' + esc(k.suffix) + '</small>' : '') + '</strong>' +
           (k.caption ? '<span class="kcap">' + esc(k.caption) + '</span>' : '') +
+          (ratio ? '<span class="ratio">' + esc(ratio) + '</span>' : '') +
           (k.delta ? '<span class="delta">' + esc(k.delta) + '</span>' : '') + '</div>';
       }).join('') + '</div>' : '') +
       (d.note ? '<p class="demo-foot reveal">' + esc(d.note) + '</p>' : '') +
-      '<div class="charts' + (lc && bc ? '' : ' one') + '">' +
+      '<div class="charts' + (np > 1 ? '' : ' one') + '">' +
       (lc ? '<div class="panel reveal chart-line">' + panelHead(d.line) + lc + '</div>' : '') +
-      (bc ? '<div class="panel reveal">' + panelHead(d.bars) + bc + '</div>' : '') + '</div>' +
+      (bc ? '<div class="panel reveal">' + panelHead(d.bars) + bc + (d.bars.note ? '<p class="panel-note">' + esc(d.bars.note) + '</p>' : '') + '</div>' : '') + pp + '</div>' +
       (cl.title ? '<div class="demo-close reveal">' + (cl.eyebrow ? '<p class="eyebrow">' + esc(cl.eyebrow) + '</p>' : '') +
         '<h2>' + esc(cl.title) + '</h2>' + (cl.text ? '<p class="sub">' + esc(cl.text) + '</p>' : '') + '</div>' : '');
   }
