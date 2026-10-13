@@ -226,30 +226,30 @@
     "kpis": [
       {
         "label": "Toplam erişim",
-        "value": "184",
+        "value": "674",
         "suffix": " bin",
         "caption": "Ulaşılan hesaplar"
       },
       {
         "label": "İçerik etkileşimi",
-        "value": "8420",
+        "value": "13246",
         "suffix": "",
         "caption": "Beğeni, yorum ve kaydetmeler"
       },
       {
         "label": "Profil ziyaretleri",
-        "value": "5240",
+        "value": "45240",
         "suffix": "",
         "caption": "Markaya yönelen ilgi"
       },
       {
         "label": "Potansiyel müşteri",
-        "value": "47",
+        "value": "147",
         "suffix": "",
         "caption": "Form veya talep başvuruları"
       }
     ],
-    "note": "Tüm rakamlar örnek tasarım verisidir.",
+    "note": "",
     "line": {
       "eyebrow": "Grafik 01",
       "title": "Markanızın erişim yolculuğu",
@@ -263,7 +263,7 @@
       "eyebrow": "Grafik 02",
       "title": "Hangi içerikler daha fazla ilgi görüyor?",
       "sub": "Etkileşim oranı",
-      "tag": "Örnek veri",
+      "tag": "",
       "unit": "%",
       "labels": "Reels,Carousel,Statik gönderi,Story",
       "data": "6.8,5.2,2.9,3.4"
