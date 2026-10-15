@@ -9,7 +9,7 @@
     results: 'Sonuçlar', process: 'Süreç', apply: 'Başvuru formu', faq: 'SSS', footer: 'Alt bilgi',
     name: 'Marka adı', title: 'Başlık', accent: 'Vurgulu başlık (italik)', titleAccent: 'Vurgulu başlık (italik)', description: 'Açıklama (SEO)',
     email: 'E-posta (başvurular buraya düşer)', instagram: 'Instagram kullanıcı adı', instagramUrl: 'Instagram linki',
-    logo: 'Logo dosya yolu', announce: 'Üst duyuru çubuğu (boşsa gizlenir)', label: 'Etiket', href: 'Bağlantı',
+    logo: 'Logo (menü ve ana ekran kartı)', logoNav: 'Menü logosu (boşsa yukarıdaki logo kullanılır)', logoLight: 'Alt bilgi logosu (koyu zemin için açık renkli)', announce: 'Üst duyuru çubuğu (boşsa gizlenir)', label: 'Etiket', href: 'Bağlantı',
     badge: 'Rozet', text: 'Metin', primaryCta: 'Ana buton', secondaryCta: 'İkinci buton', stats: 'Rakamlar (değer boşsa gizlenir)',
     value: 'Değer', items: 'Öğeler', eyebrow: 'Üst etiket', num: 'Numara', tags: 'Etiketler', tag: 'Etiket', metric: 'Rakam',
     metricLabel: 'Rakam açıklaması', steps: 'Adımlar', time: 'Süre', mission: 'Misyon', vision: 'Vizyon', values: 'Çalışma ilkeleri', valuesTitle: 'Çalışma ilkeleri başlığı',
@@ -22,7 +22,7 @@
   };
   var HINTS = {
     'apply.endpoint': 'Başvuruların e-postanıza düşmesi için: formspree.io\'dan ücretsiz form açın, verilen adresi (https://formspree.io/f/xxxx) buraya yapıştırın.',
-    'site.logo': 'Logoyu depodaki assets klasörüne yükleyip yolunu yazın (ör. assets/logo.png).',
+    'site.logo': 'Logoyu depodaki assets klasörüne yükleyip yolunu yazın (ör. assets/fua-logo.png). Alt bilgi logosu boşsa alt bilgide marka adı yazı olarak görünür.',
     'results.items': 'Vaka eklemezseniz Sonuçlar bölümü ve menüdeki linki sitede otomatik gizlenir. “Başlık buraya gelecek” gibi örnekleri silin ya da doldurun.',
     'hero.stats': 'Değeri boş bırakılan rakamlar sitede görünmez.',
     'booking.calUrl': 'cal.com\'da hesap açıp bir etkinlik oluşturun, linkini (ör. https://cal.com/kullaniciadi/gorusme) buraya yapıştırın. Boş bırakırsanız Randevu bölümü ve menüdeki linki gizlenir.',

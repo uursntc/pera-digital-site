@@ -1,12 +1,14 @@
 {
   "site": {
-    "name": "PERA DIGITAL",
-    "title": "PERA DIGITAL | Dijital Pazarlama Ajansı",
+    "name": "FUA DİJİTAL",
+    "title": "FUA DİJİTAL | Dijital Pazarlama Ajansı",
     "description": "Önce anlarız, sonra üretiriz. Meta reklam, sosyal medya, pazarlama ve marka stratejisi.",
     "email": "peradigital9@gmail.com",
     "instagram": "pera.digitalmarketing",
     "instagramUrl": "https://instagram.com/pera.digitalmarketing",
-    "logo": "assets/logo.png",
+    "logo": "assets/fua-logo.png",
+    "logoNav": "",
+    "logoLight": "assets/fua-logo-light.png",
     "announce": "Yeni markalar için başvurular açık"
   },
   "nav": [
@@ -117,7 +119,7 @@
     "eyebrow": "02 / Hakkımızda",
     "title": "Doğru konum, doğru stratejiyle başlar.",
     "accent": "",
-    "text": "PERA DIGITAL, markaların dijitalde doğru yerde durması için kurulmuş, strateji odaklı bir dijital pazarlama ajansı.",
+    "text": "FUA DİJİTAL, markaların dijitalde doğru yerde durması için kurulmuş, strateji odaklı bir dijital pazarlama ajansı.",
     "mission": {
       "label": "Misyon",
       "text": "Markaların dijitalde kendini net anlatmasına yardım etmek. Reklamı ve içeriği tek bir stratejinin parçası olarak yönetmek."
@@ -258,7 +260,7 @@
     "successText": "En kısa sürede size dönüş yapacağız.",
     "kvkkText": "Kişisel verilerimin başvuru değerlendirmesi amacıyla işlenmesini kabul ediyorum.",
     "kvkkUrl": "",
-    "endpoint": "",
+    "endpoint": "https://formspree.io/f/maeqdplp",
     "accessKey": "",
     "mailtoFallback": "",
     "sectors": [
@@ -340,6 +342,6 @@
   },
   "footer": {
     "tagline": "Strateji · İçerik · Performans",
-    "copyright": "© 2026 PERA DIGITAL. Tüm hakları saklıdır."
+    "copyright": "© 2026 FUA DİJİTAL. Tüm hakları saklıdır."
   }
 }

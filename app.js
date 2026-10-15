@@ -27,20 +27,32 @@
       (o.text ? '<p class="sub">' + esc(o.text) + '</p>' : '') + (extra || '') + '</div>';
   }
 
+  // Logo dosyası yoksa marka adı yazı logosu olarak çizilir: ilk kelime büyük, kalanı altında küçük
+  function wordmark(name) {
+    var p = String(name || '').trim().split(/\s+/), first = p.shift() || '';
+    return '<b>' + esc(first) + '</b>' + (p.length ? '<small>' + esc(p.join(' ')) + '</small>' : '');
+  }
+
   function render(c) {
     var s = c.site || {};
-    document.title = s.title || s.name || 'PERA DIGITAL';
+    document.title = s.title || s.name || 'FUA DİJİTAL';
     var md = document.querySelector('meta[name=description]'); if (md) md.content = s.description || '';
 
     if (s.announce) { $('announce').textContent = s.announce; $('announce').hidden = false; }
-    $('brandName').textContent = s.name || '';
-    if (s.logo) {
-      ['brandLogo', 'heroLogo'].forEach(function (id) {
-        var im = $(id); im.src = s.logo; im.hidden = false;
-        im.onerror = function () { im.hidden = true; };
-      });
-      $('brandLogo').addEventListener('load', function () { $('brandName').style.display = 'none'; });
+    $('brandName').innerHTML = wordmark(s.name);
+    // logo: s.logo = tam logo (menü ve ana ekran kartı), s.logoNav = menü için ayrı logo (boşsa s.logo), s.logoLight = koyu zemin logosu (alt bilgi)
+    // logo dosyası varsa yazı logosu gizlenir; dosya yüklenemezse yazı logosuna geri dönülür
+    function setImg(id, src, alt, textId) {
+      var im = $(id); if (!src || !im) return;
+      var tx = textId ? $(textId) : null;
+      im.onerror = function () { im.hidden = true; if (tx) tx.style.display = ''; };
+      im.alt = alt || '';
+      if (tx) tx.style.display = 'none';
+      im.src = src; im.hidden = false;
     }
+    setImg('brandLogo', s.logoNav || s.logo, '', 'brandName');
+    setImg('heroLogo', s.logo, '');
+    setImg('footLogo', s.logoLight, s.name || '', 'footName');
 
     $('navLinks').innerHTML = arr(c.nav).map(function (n) {
       return '<a href="' + esc(safeUrl(n.href)) + '">' + esc(n.label) + '</a>';
@@ -141,7 +153,7 @@
     renderBooking(c.booking || {});
 
     var ft = c.footer || {};
-    $('footName').textContent = s.name || ''; $('footTag').textContent = ft.tagline || ''; $('footCopy').textContent = ft.copyright || '';
+    $('footName').innerHTML = wordmark(s.name); $('footTag').textContent = ft.tagline || ''; $('footCopy').textContent = ft.copyright || '';
     var links = [];
     if (s.email) links.push('<a href="mailto:' + esc(s.email) + '">' + esc(s.email) + '</a>');
     if (s.instagramUrl) links.push('<a href="' + esc(safeUrl(s.instagramUrl)) + '" target="_blank" rel="noopener">@' + esc(String(s.instagram || '').replace(/^@/, '')) + '</a>');
