@@ -211,7 +211,7 @@
 
   /* ---------- init: GitHub Pages adresinden otomatik doldur ---------- */
   var c = cfg();
-  if (/(^|\.)peradijital\.com$/.test(location.hostname)) { c.owner = c.owner || 'uursntc'; c.repo = c.repo || 'pera-digital-site'; }
+  if (/(^|\.)(fuadijital|peradijital)\.com$/.test(location.hostname)) { c.owner = c.owner || 'uursntc'; c.repo = c.repo || 'pera-digital-site'; }
   var m = location.hostname.match(/^([^.]+)\.github\.io$/);
   if (m) {
     c.owner = c.owner || m[1];
